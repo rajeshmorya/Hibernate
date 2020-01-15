@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 29, 2019 9:52:43 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Region" table="REGION">
+        <id name="regionid" type="java.lang.Integer">
+            <column name="REGIONID" />
+            <generator class="assigned" />
+        </id>
+        <property name="companyid" type="java.lang.Integer">
+            <column name="COMPANYID" />
+        </property>
+        <property name="regionname" type="java.lang.String">
+            <column name="REGIONNAME" />
+        </property>
+        <property name="regionaddress" type="java.lang.String">
+            <column name="REGIONADDRESS" />
+        </property>
+        <set name="childern" cascade="all">
+            <key>
+                <column name="foreven_regionid" />
+            </key>
+<!--             <element type="string">
+                <column name="CHILDERN" />
+            </element> -->
+             <one-to-many class="com.arteck.Region_has_role"/>
+        </set>
+    </class>
+</hibernate-mapping>

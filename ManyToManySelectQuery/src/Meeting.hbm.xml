@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 4, 2019 12:36:02 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Meeting" table="MEETING">
+        <id name="meetingid" type="java.lang.Integer">
+            <column name="MEETINGID" />
+            <generator class="assigned" />
+        </id>
+        <property name="meetingname" type="java.lang.String">
+            <column name="MEETINGNAME" />
+        </property>
+        <set name="Employee" table="Employee_meeting" cascade="all" lazy="false">
+            <key>
+                <column name="meeting_id" />
+            </key>
+<!--             <element type="string">
+                <column name="EMPLOYEE" />
+            </element> -->
+            <many-to-many class="com.arteck.Employee" column="employee_id" />
+        </set>
+    </class>
+</hibernate-mapping>

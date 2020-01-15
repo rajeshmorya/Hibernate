@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 29, 2019 9:28:48 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.User" table="USER_01">
+        <id name="userid" type="java.lang.Integer">
+            <column name="USERID" />
+            <generator class="assigned" />
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="mobile" type="java.lang.Integer">
+            <column name="MOBILE" />
+        </property>
+        <property name="phone" type="java.lang.Integer">
+            <column name="PHONE" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <set name="childern" cascade="all">
+            <key>
+                <column name="foreven_userid" />
+            </key>
+ <!--            <element type="string">
+                <column name="CHILDERN" />
+            </element> -->
+             <one-to-many class="com.arteck.User_has_role"/>
+        </set>
+    </class>
+</hibernate-mapping>

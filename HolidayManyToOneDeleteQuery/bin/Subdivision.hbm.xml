@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 30, 2019 11:21:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Subdivision" table="SUBDIVISION_01">
+        <id name="subdivisionid" type="java.lang.Integer">
+            <column name="SUBDIVISIONID" />
+            <generator class="assigned" />
+        </id>
+        <property name="subdivisionname" type="java.lang.String">
+            <column name="SUBDIVISIONNAME" />
+        </property>
+        <property name="subdivisionaddress" type="java.lang.String">
+            <column name="SUBDIVISIONADDRESS" />
+        </property>
+        <many-to-one name="division_iddivision" class="com.arteck.Division" cascade="all">
+            <column name="DIVISION_IDDIVISION" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

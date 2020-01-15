@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2019 2:48:27 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Cbism_substation_log" table="CBISM_SUBSTATION_LOG">
+        <id name="cbism_substation_logid" type="java.lang.Integer">
+            <column name="CBISM_SUBSTATION_LOGID" />
+            <generator class="assigned" />
+        </id>
+        <property name="cbism_substation_logname" type="java.lang.String">
+            <column name="CBISM_SUBSTATION_LOGNAME" />
+        </property>
+        <property name="cbism_substation_logaddress" type="java.lang.String">
+            <column name="CBISM_SUBSTATION_LOGADDRESS" />
+        </property>
+    </class>
+</hibernate-mapping>

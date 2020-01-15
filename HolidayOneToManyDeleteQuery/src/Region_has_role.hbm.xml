@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 29, 2019 9:52:43 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Region_has_role" table="REGION_HAS_ROLE">
+        <id name="regionroleid" type="java.lang.Integer">
+            <column name="REGIONROLEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="foreven_regionid" type="java.lang.Integer">
+            <column name="FOREVEN_REGIONID" />
+        </property>
+    </class>
+</hibernate-mapping>

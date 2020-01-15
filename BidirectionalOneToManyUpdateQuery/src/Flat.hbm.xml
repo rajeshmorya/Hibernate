@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 3, 2019 9:38:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Flat" table="FLAT">
+        <id name="flatid" type="java.lang.Integer">
+            <column name="FLATID" />
+            <generator class="assigned" />
+        </id>
+        <property name="flatname" type="java.lang.String">
+            <column name="FLATNAME" />
+        </property>
+        <many-to-one name="parentObject" class="com.arteck.Building" cascade="all">
+            <column name="PARENTOBJECT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

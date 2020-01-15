@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 28, 2019 12:43:36 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Mother" table="MOTHER1">
+        <id name="motherid" type="java.lang.Integer">
+            <column name="MOTHERID" />
+            <generator class="assigned" />
+        </id>
+        <property name="mothername" type="java.lang.String">
+            <column name="MOTHERNAME" />
+        </property>
+    </class>
+</hibernate-mapping>

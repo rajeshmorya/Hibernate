@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 14, 2019 11:36:25 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Product" table="product">
+      <!--   <cache usage="transactional"/> -->
+      <cache usage="read-write" />
+        <id name="pid" type="int">
+            <column name="pid" />
+            <generator class="increment" />
+        </id>
+        <property name="pname" type="java.lang.String">
+            <column name="pname" />
+        </property>
+        <property name="pcolor" type="java.lang.String">
+            <column name="pcolor" />
+        </property>
+    </class>
+</hibernate-mapping>

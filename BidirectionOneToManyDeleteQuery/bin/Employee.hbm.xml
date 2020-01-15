@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 3, 2019 8:51:56 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Employee" table="EMPLOYEE_bidirectional">
+        <id name="employeeid" type="java.lang.Integer">
+            <column name="EMPLOYEEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="employename" type="java.lang.String">
+            <column name="EMPLOYENAME" />
+        </property>
+        <many-to-one name="parentObject" class="com.arteck.Company" cascade="all">
+            <column name="PARENTOBJECT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

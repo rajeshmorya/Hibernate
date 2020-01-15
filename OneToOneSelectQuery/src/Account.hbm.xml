@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 4, 2019 4:04:10 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Account" table="ACCOUNT">
+        <id name="accountid" type="java.lang.Integer">
+            <column name="ACCOUNTID" />
+      
+            <generator class="foreign">
+<param name="property">e</param>
+</generator>
+        </id>
+        <property name="accountname" type="java.lang.String">
+            <column name="ACCOUNTNAME" />
+        </property>
+        <one-to-one name="e" class="com.arteck.Employee" cascade="all" fetch="join" />
+<!--         <many-to-one name="e" class="com.arteck.Employee" fetch="join">
+            <column name="E" />
+        </many-to-one> -->
+    </class>
+</hibernate-mapping>

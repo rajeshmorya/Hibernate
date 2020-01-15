@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class name="com.pp.Employees" table="employees">
+
+<composite-id>
+<key-property name="empId" column="EMPID"/>
+<key-property name="createdDate" column="CREATEDDATE"/>
+<key-property name="createdBy" column="CREATEDBY"/>
+</composite-id>
+
+<property name="empName" column="EMPNAME"/>
+
+<set name="certificates" cascade="all" table="employees_certificates">
+<key>
+
+<column name="EMPID"/>
+<column name="CREATEDDATE"/>
+<column name="CREATEDBY"/>
+
+</key>
+
+<many-to-many class="com.pp.Certificates">
+<column name="cer_id"/>
+
+</many-to-many>
+
+</set>
+</class>
+</hibernate-mapping>

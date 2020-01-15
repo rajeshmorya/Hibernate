@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 28, 2019 11:33:35 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.CardUser" table="CARDUSER">
+        <id name="carduserid" type="java.lang.Integer">
+            <column name="CARDUSERID" />
+            <generator class="assigned" />
+        </id>
+        <property name="cardusername" type="java.lang.String">
+            <column name="CARDUSERNAME" />
+        </property>
+        <many-to-one name="parentObject" class="com.arteck.Cards" cascade="all">
+            <column name="PARENTOBJECT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

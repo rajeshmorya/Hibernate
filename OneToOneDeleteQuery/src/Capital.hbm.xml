@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 4, 2019 6:47:04 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Capital" table="CAPITAL">
+        <id name="capitalid" type="java.lang.Integer">
+            <column name="CAPITALID" />
+        <generator class="foreign">
+			   <param name="property">c</param>
+		 </generator>
+        </id>
+        <property name="capitalname" type="java.lang.String">
+            <column name="CAPITALNAME" />
+        </property>
+<!--         <many-to-one name="c" class="com.arteck.Country" cascade="all">
+            <column name="C" />
+        </many-to-one> -->
+          <one-to-one name="c" class="com.arteck.Country" cascade="all" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 30, 2019 3:40:40 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Circle" table="CIRCLE_01">
+        <id name="circleid" type="java.lang.Integer">
+            <column name="CIRCLEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="circlename" type="java.lang.String">
+            <column name="CIRCLENAME" />
+        </property>
+        <property name="circleaddress" type="java.lang.String">
+            <column name="CIRCLEADDRESS" />
+        </property>
+        <many-to-one name="parentObject" class="com.arteck.Region" cascade="all">
+            <column name="PARENTOBJECT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

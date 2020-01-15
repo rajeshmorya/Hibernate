@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 5, 2019 3:36:57 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Employee_project" table="EMPLOYEE_PROJECT1">
+        <id name="emp_proid" type="java.lang.Integer">
+            <column name="EMP_PROID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="em" class="com.arteck.Employee">
+            <column name="EM" />
+        </many-to-one>
+        <many-to-one name="pro" class="com.arteck.Project">
+            <column name="PRO" />
+        </many-to-one>
+        <property name="activetedname" type="java.lang.String">
+            <column name="ACTIVETEDNAME" />
+        </property>
+        <property name="employeedate" type="java.sql.Date">
+            <column name="EMPLOYEEDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

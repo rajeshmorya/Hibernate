@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 30, 2019 4:13:15 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Division" table="DIVISION_01">
+        <id name="divisionid" type="java.lang.Integer">
+            <column name="DIVISIONID" />
+            <generator class="assigned" />
+        </id>
+        <property name="circleid" type="java.lang.Integer">
+            <column name="CIRCLEID" />
+        </property>
+        <property name="divisionname" type="java.lang.String">
+            <column name="DIVISIONNAME" />
+        </property>
+        <property name="divisionaddress" type="java.lang.String">
+            <column name="DIVISIONADDRESS" />
+        </property>
+        <many-to-one name="parentObject" class="com.arteck.Circle" cascade="all">
+            <column name="PARENTOBJECT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

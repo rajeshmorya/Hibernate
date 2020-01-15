@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2019 3:32:48 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Company_has_role" table="COMPANY_HAS_ROLE_01">
+        <id name="company_has_roleid" type="java.lang.Integer">
+            <column name="COMPANY_HAS_ROLEID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="role_roleid" class="com.arteck.Role" cascade="all">
+            <column name="ROLE_ROLEID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

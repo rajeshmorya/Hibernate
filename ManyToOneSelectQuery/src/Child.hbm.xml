@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 28, 2019 12:43:36 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Child" table="MOTHERCHILD">
+        <id name="childid" type="java.lang.Integer">
+            <column name="CHILDID" />
+            <generator class="assigned" />
+        </id>
+        <property name="childname" type="java.lang.String">
+            <column name="CHILDNAME" />
+        </property>
+        <many-to-one name="parentObject" class="com.arteck.Mother" cascade="all">
+            <column name="PARENTOBJECT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

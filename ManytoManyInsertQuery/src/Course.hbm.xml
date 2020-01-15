@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 4, 2019 12:12:18 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Course" table="COURSE">
+        <id name="courseid" type="java.lang.Integer">
+            <column name="COURSEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="coursename" type="java.lang.String">
+            <column name="COURSENAME" />
+        </property>
+        <property name="duration" type="java.lang.Integer">
+            <column name="DURATION" />
+        </property>
+        <set name="Student" cascade="all" table="student_course">
+            <key>
+                <column name="COURSEid1" />
+            </key>
+ <!--            <element type="string">
+                <column name="STUDENT" />
+            </element> -->
+            <many-to-many class="com.arteck.Student" column="STUDENTid1"/>
+        </set>
+    </class>
+</hibernate-mapping>

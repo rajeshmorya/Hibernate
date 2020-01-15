@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 4, 2019 7:26:32 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Engin" table="ENGIN">
+        <id name="engineid" type="java.lang.Integer">
+            <column name="ENGINEID" />
+               <generator class="foreign">
+				<param name="property">c1</param>
+			</generator>
+        </id>
+        <property name="enginename" type="java.lang.String">
+            <column name="ENGINENAME" />
+        </property>
+   <!--      <many-to-one name="c1" class="com.arteck.Car" fetch="join">
+            <column name="C1" />
+        </many-to-one> -->
+       <one-to-one name="c1" class="com.arteck.Car" cascade="all"/>
+    </class>
+</hibernate-mapping>

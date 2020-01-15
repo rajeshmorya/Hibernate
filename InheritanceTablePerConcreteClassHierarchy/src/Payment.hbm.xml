@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 7, 2019 2:24:31 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Payment" table="PAYMENT_02">
+        <id name="paymentid" type="java.lang.Integer">
+            <column name="PAYMENTID" />
+            <generator class="assigned" />
+        </id>
+        <property name="amount" type="double">
+            <column name="AMOUNT" />
+        </property>
+        <union-subclass name="com.arteck.CreditCard">
+		<property name="CreditCardType" column="cctype" length="10" />
+		</union-subclass>
+
+		<union-subclass name="com.arteck.Cheque">
+		<property name="ChequeType" column="cqtype" length="10" />
+		</union-subclass>
+        
+    </class>
+</hibernate-mapping>

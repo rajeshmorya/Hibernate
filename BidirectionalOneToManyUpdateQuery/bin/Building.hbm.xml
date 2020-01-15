@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 3, 2019 9:38:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Building" table="BUILDING">
+        <id name="buildingid" type="java.lang.Integer">
+            <column name="BUILDINGID" />
+            <generator class="assigned" />
+        </id>
+        <property name="buildingname" type="java.lang.String">
+            <column name="BUILDINGNAME" />
+        </property>
+        <set name="children" inverse="true" cascade="all">
+            <key>
+                <column name="parentObject" />
+            </key>
+<!--             <element type="string">
+                <column name="CHILDREN" />
+            </element> -->
+            <one-to-many class="com.arteck.Flat" />
+        </set>
+    </class>
+</hibernate-mapping>

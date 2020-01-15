@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 4, 2019 3:28:19 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Book" table="BOOK">
+        <id name="bookid" type="java.lang.Integer">
+            <column name="BOOKID" />
+            <generator class="assigned" />
+        </id>
+        <property name="bookname" type="java.lang.String">
+            <column name="BOOKNAME" />
+        </property>
+        <set name="Publisher" table="book_publisher" cascade="all">
+            <key>
+                <column name="book_id" />
+            </key>
+<!--             <element type="string">
+                <column name="PUBLISHER" />
+            </element> -->
+           <many-to-many class="com.arteck.Publisher" column="publisher_id" />
+        </set>
+    </class>
+</hibernate-mapping>

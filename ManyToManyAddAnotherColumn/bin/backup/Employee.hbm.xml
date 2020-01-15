@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 5, 2019 2:35:15 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Employee" table="EMPLOYEE_02">
+        <id name="employeeid" type="java.lang.Integer">
+            <column name="EMPLOYEEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="employename" type="java.lang.String">
+            <column name="EMPLOYENAME" />
+        </property>
+        <set name="Project" table="employee_project" cascade="all">
+            <key>
+                <column name="employee_id" />
+            </key>
+  <!--           <element type="string">
+                <column name="PROJECT" />
+            </element> -->
+              <many-to-many class="com.arteck.Project" column="project_id" />
+        </set>
+    </class>
+</hibernate-mapping>

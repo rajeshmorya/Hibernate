@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 30, 2019 2:47:00 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Company" table="COMPANY_01">
+        <id name="companyid" type="java.lang.Integer">
+            <column name="COMPANYID" />
+            <generator class="assigned" />
+        </id>
+        <property name="companyname" type="java.lang.String">
+            <column name="COMPANYNAME" />
+        </property>
+        <property name="initials" type="java.lang.String">
+            <column name="INITIALS" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="contact" type="java.lang.Integer">
+            <column name="CONTACT" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <set name="children" cascade="all">
+            <key>
+                <column name="foreven_companyid" />
+            </key>
+<!--             <element type="string">
+                <column name="CHILDREN" />
+            </element> -->
+            <one-to-many class="com.arteck.region"/>
+        </set>
+    </class>
+</hibernate-mapping>

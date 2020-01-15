@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 29, 2019 10:25:35 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Circle_has_role" table="CIRCLE_HAS_ROLE">
+        <id name="circleroleid" type="java.lang.Integer">
+            <column name="CIRCLEROLEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="foreven_circle" type="java.lang.Integer">
+            <column name="FOREVEN_CIRCLE" />
+        </property>
+    </class>
+</hibernate-mapping>

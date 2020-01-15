@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 28, 2019 4:23:20 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Car" table="CAR">
+        <id name="carid" type="java.lang.Integer">
+            <column name="CARID" />
+            <generator class="assigned" />
+        </id>
+        <property name="carname" type="java.lang.String">
+            <column name="CARNAME" />
+        </property>
+    </class>
+</hibernate-mapping>

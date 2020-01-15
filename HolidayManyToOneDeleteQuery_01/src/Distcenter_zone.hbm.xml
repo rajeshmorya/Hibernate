@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2019 2:09:32 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Distcenter_zone" table="DISTCENTER_ZONE_01">
+        <id name="distcenter_zoneid" type="java.lang.Integer" access="field">
+            <column name="DISTCENTER_ZONEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="distcenter_zonename" type="java.lang.String" access="field">
+            <column name="DISTCENTER_ZONENAME" />
+        </property>
+        <property name="distcenter_zoneaddress" type="java.lang.String" access="field">
+            <column name="DISTCENTER_ZONEADDRESS" />
+        </property>
+        <many-to-one name="subdivision_subdivisionid" class="com.arteck.Subdivision" cascade="all">
+            <column name="SUBDIVISION_SUBDIVISIONID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

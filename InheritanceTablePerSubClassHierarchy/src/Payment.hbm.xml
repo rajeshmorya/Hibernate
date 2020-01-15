@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class name="com.arteck.Payment" table="payment_01">
+<id name="paymentid" column="pid"/>
+<property name="amount" column="amt"></property>
+
+<joined-subclass name="com.arteck.CreaditCard" table="Creadit_card_01">
+<key column="dummy1"></key>
+<property name="creaditcardType" column="cctype"></property>
+</joined-subclass>
+
+<joined-subclass name="com.arteck.cheque" table="Cheque_01">
+<key column="dummy2"></key>
+<property name="chequetype" column="cqtype"></property>
+</joined-subclass>
+</class>
+</hibernate-mapping>

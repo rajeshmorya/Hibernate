@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 4, 2019 11:15:38 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Student" table="STUDENT">
+        <id name="studentid" type="java.lang.Integer">
+            <column name="STUDENTID" />
+        </id>
+        <property name="studentname" type="java.lang.String">
+            <column name="STUDENTNAME" />
+        </property>
+    </class>
+</hibernate-mapping>

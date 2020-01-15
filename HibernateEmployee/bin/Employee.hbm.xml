@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 21, 2019 1:06:46 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Employee" table="EMPLOYEE">
+        <id name="epid" type="java.lang.Integer" access="field">
+            <column name="eid" />
+            <generator class="assigned" />
+        </id>
+        <property name="ename" type="java.lang.String" access="field">
+            <column name="ename" />
+        </property>
+        <property name="salary" type="java.lang.Integer" access="field">
+            <column name="salary" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 29, 2019 11:30:17 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Customer" table="CUSTOMER">
+        <id name="customerid" type="java.lang.Integer">
+            <column name="CUSTOMERID" />
+            <generator class="assigned" />
+        </id>
+        <property name="customername" type="java.lang.String">
+            <column name="CUSTOMERNAME" />
+        </property>
+    </class>
+</hibernate-mapping>

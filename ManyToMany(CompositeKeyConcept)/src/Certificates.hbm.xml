@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.pp.Certificates" table="certificate">
+
+<id name="cerNo" column="CERNO"/>
+
+<property name="cerName" column="CERNAME" length="20"/>
+
+<set name="employees" inverse="false" cascade="all" table="employees_certificates">
+
+<key column="cer_id"/>
+
+
+<many-to-many class="com.pp.Employees">
+<column name="EMPID"/>
+<column name="CREATEDDATE"/>
+<column name="CREATEDBY"/>
+
+</many-to-many>
+
+</set>
+
+</class>
+
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 7, 2019 3:31:59 PM by Hibernate Tools 3.5.0.Final -->
+
+<hibernate-mapping>
+<class name="com.arteck.Book" table="Book">
+
+<composite-id>
+<key-property name="Bookid" column="bid"></key-property>
+<key-property name="createdDate"  column="cdbook"></key-property>
+<key-property name="createdBy" column="cbbook"></key-property>
+</composite-id>
+
+<properties name="Bookname" column="bookname"></properties>
+
+<set name="com.arteck.Author" cascade="all" table="book_author">
+
+
+</set>
+</class>
+</hibernate-mapping>

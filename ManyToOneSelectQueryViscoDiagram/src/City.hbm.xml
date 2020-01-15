@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 29, 2019 11:51:55 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.City" table="CITY">
+        <id name="cityid" type="java.lang.Integer">
+            <column name="CITYID" />
+            <generator class="assigned" />
+        </id>
+        <property name="cityname" type="java.lang.String">
+            <column name="CITYNAME" />
+        </property>
+        <many-to-one name="parentObject" class="com.arteck.State" cascade="all">
+            <column name="PARENTOBJECT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

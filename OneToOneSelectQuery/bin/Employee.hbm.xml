@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 4, 2019 4:04:10 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.arteck.Employee" table="EMPLOYEE_01">
+        <id name="employeeid" type="java.lang.Integer">
+            <column name="EMPLOYEEID" />
+            
+        </id>
+        <property name="employeename" type="java.lang.String" >
+            <column name="EMPLOYEENAME" />
+        </property>
+    </class>
+</hibernate-mapping>
